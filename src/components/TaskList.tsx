@@ -7,14 +7,6 @@ interface Prop {
 }
 
 const TaskList: React.FC<Prop> = ({ todos, setToDos }) => {
-  const handleComplete = (id: number) => {
-    setToDos(
-      todos.map((t) =>
-        t.id === id ? { ...t, isDone: !t.isDone } : t
-      )
-    );
-  };
-
   return (
     <div>
       <ul className="space-y-2">
