@@ -1,5 +1,6 @@
 import React from "react";
 import type { Todo } from "../model";
+import SingleToDo from "./SingleToDo";
 
 interface Prop {
   todos: Todo[];
@@ -9,18 +10,10 @@ interface Prop {
 const TaskList: React.FC<Prop> = ({ todos, setToDos }) => {
   return (
     <div>
-      <ul className="space-y-2">
-          {todos.map((t)=>{
-            return (
-              <li
-              key={t.id}
-              className="flex items-center gap-3 rounded-md border border-slate-200 bg-white p-3"
-            >{t.todo}</li> 
-            )
-          })}
-            
-        </ul>
-      </div>
+      <ul className="space-y-2 ">
+        <SingleToDo todos={todos} setToDos={setToDos} />
+      </ul>
+    </div>
   );
 };
 
